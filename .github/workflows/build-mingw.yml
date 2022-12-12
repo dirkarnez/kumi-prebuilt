@@ -14,7 +14,7 @@ jobs:
       libraryName: kumi
       cmakeInstallationPath: kumi-installation
       tagName: v3.0
-      mingwTargetZip: kumi-${{ github.ref_name }}-mingw64-x86_64-posix-seh-rev0-8.1.0.zip
+      mingwTargetZip: kumi-${{ github.ref_name }}-winlibs-x86_64-posix-seh-gcc-11.2.0-mingw-w64-9.0.0-r1.zip
     steps:
       - name: git clone
         shell: cmd
@@ -40,7 +40,7 @@ jobs:
             ${{ github.workspace }}\mingw64;^
             ${{ github.workspace }}\mingw64\bin;^
             ${{ github.workspace }}\PortableGit-2.38.1-64-bit\bin;^
-            ${{ github.workspace }}\cmake-3.24.0-windows-x86_64\bin;^
+            ${{ github.workspace }}\cmake-3.24.0-windows-x86_64\bin;
             gcc --version &&^
             cd kumi &&^
             cmake.exe -G "MinGW Makefiles" ^
